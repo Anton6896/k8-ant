@@ -20,5 +20,9 @@ minikube pause  -p k8-ant
 - run image as is
 
 ```sh
+# create an pod
 kubectl run ant-local --image=antonirr/ant-test-v1:tagname --port=8000
+
+# deployment
+kubectl create deployment ant-local --image=antonirr/ant-test-v1:tagname
 ```
