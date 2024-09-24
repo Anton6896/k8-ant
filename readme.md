@@ -14,3 +14,11 @@ minikube unpause -p k8-ant
 minikube status -p k8-ant
 minikube pause  -p k8-ant
 ```
+
+## k8n commends
+
+- run image as is
+
+```sh
+kubectl run ant-local --image=antonirr/ant-test-v1:tagname --port=8000
+```
