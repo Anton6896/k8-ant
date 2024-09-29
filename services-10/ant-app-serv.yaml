@@ -7,7 +7,6 @@ metadata:
     env: dev
     version: v1
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: app-v1
@@ -63,4 +62,7 @@ spec:
   type: LoadBalancer
 
 ---
+# for minikube use: minikube tunnel
 # kubectl apply -f ant-app-serv.yaml
+
+# use node port for in k8n communication between pods: NodePort
