@@ -1,6 +1,7 @@
 # k8n
 
 - minikube commends
+<https://github.com/adv4000/k8s-lessons>
 
 ```sh
 # create local cluster
@@ -54,4 +55,16 @@ kubectl run ant-local --image=antonirr/ant-test-v1:tagname --port=8000
 
 # deployment
 kubectl create deployment ant-local --image=antonirr/ant-test-v1:tagname
+```
+
+## mini kube loadBalancer
+
+- <https://minikube.sigs.k8s.io/docs/handbook/accessing/>
+
+```sh
+# create tunnel first
+minikube tunnel
+
+# create service
+kubectl expose deployment app-v1 --type=LoadBalancer --port=8000 --target-port=8000
 ```
