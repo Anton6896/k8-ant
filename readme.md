@@ -5,14 +5,37 @@
 ```sh
 # create local cluster
 minikube start --nodes 3 -p k8-ant
+kubectl get nodes
 kubectl label node <node name> node-role.kubernetes.io/worker=worker
-kubectl label nodes <node name> role=worker
+kubectl label nodes k8-ant-m02 role=worker
 minikube status -p k8-ant
 
-# work with local cluster nodes
+# - expected output
+# ```sh
+# k8-ant
+# type: Control Plane
+# host: Running
+# kubelet: Running
+# apiserver: Running
+# kubeconfig: Configured
+
+# k8-ant-m02
+# type: Worker
+# host: Running
+# kubelet: Running
+
+# k8-ant-m03
+# type: Worker
+# host: Running
+# kubelet: Running
+# ```
+
+## work with local cluster nodes
+
 minikube unpause -p k8-ant
 minikube status -p k8-ant
 minikube pause  -p k8-ant
+
 ```
 
 ## k8n commends
