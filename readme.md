@@ -30,6 +30,12 @@ minikube status -p k8-ant
 # kubelet: Running
 # ```
 
+minikube -p=k8-ant addons enable metrics-server && \
+minikube -p=k8-ant addons enable ingress && \
+minikube -p=k8-ant addons enable dashboard && \
+minikube -p=k8-ant addons list
+
+
 ## work with local cluster nodes
 
 minikube unpause -p k8-ant
